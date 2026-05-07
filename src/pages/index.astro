@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import HowWeWork from '../components/HowWeWork';
+import FreeDiagnosis from '../components/FreeDiagnosis';
+import ValueProposition from '../components/ValueProposition';
+import Advantages from '../components/Advantages';
+import WhatYouGain from '../components/WhatYouGain';
+import Experience from '../components/Experience';
+import Testimonials from '../components/Testimonials';
+import FAQs from '../components/FAQs';
+import RealEstateTruths from '../components/RealEstateTruths';
+import ContactForm from '../components/ContactForm';
+import Footer from '../components/Footer';
+
+import '../styles/global.css';
+---
+
+<Layout>
+  <!-- Header fixed -->
+  <Header client:load />
+
+  <!-- Hero — load immediately for LCP -->
+  <Hero client:load />
+
+  <!-- Sections below the fold — hydrate when visible -->
+  <HowWeWork client:visible />
+  <FreeDiagnosis client:visible />
+  <ValueProposition client:visible />
+  <Advantages client:visible />
+  <WhatYouGain client:visible />
+  <Experience client:visible />
+  <Testimonials client:visible />
+  <FAQs client:visible />
+  <RealEstateTruths client:visible />
+  <ContactForm client:visible />
+  <Footer client:visible />
+</Layout>

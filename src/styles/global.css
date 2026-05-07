@@ -19,6 +19,29 @@
 @layer components {
   .btn-primary {
     @apply inline-flex items-center gap-2 bg-gold text-white px-7 py-3.5 text-sm font-sans font-medium tracking-wide transition-all duration-300 hover:bg-gold-dark hover:shadow-lg hover:-translate-y-0.5;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -130%;
+    width: 55%;
+    height: 220%;
+    background: linear-gradient(
+      105deg,
+      transparent 35%,
+      rgba(255, 255, 255, 0.20) 50%,
+      transparent 65%
+    );
+    transition: left 0.55s ease;
+    pointer-events: none;
+  }
+
+  .btn-primary:hover::after {
+    left: 165%;
   }
 
   .btn-secondary {

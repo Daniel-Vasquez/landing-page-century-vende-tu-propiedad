@@ -22,13 +22,13 @@ export default function Advantages() {
             Cobertura y red
           </p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-dark font-semibold leading-tight">
-            Ventajas de vender con nosotros
+            Ventajas de vender con CENTURY 21®
           </h2>
         </AnimatedSection>
 
         <div className="grid md:grid-cols-3 gap-10 md:gap-12 mb-16">
           {/* Card 1 — Alcaldías */}
-          <AnimatedSection delay={0.05}>
+          <AnimatedSection delay={0.0} hoverable>
             <div className="group">
               <div className="w-10 h-10 bg-gold/10 flex items-center justify-center mb-5 transition-colors group-hover:bg-gold/20">
                 <MapPin size={18} className="text-gold" />
@@ -48,7 +48,7 @@ export default function Advantages() {
           </AnimatedSection>
 
           {/* Card 2 — Un solo punto */}
-          <AnimatedSection delay={0.15}>
+          <AnimatedSection delay={0.1} hoverable>
             <div className="group">
               <div className="w-10 h-10 bg-gold/10 flex items-center justify-center mb-5 transition-colors group-hover:bg-gold/20">
                 <Link2 size={18} className="text-gold" />
@@ -63,7 +63,7 @@ export default function Advantages() {
           </AnimatedSection>
 
           {/* Card 3 — Aliados */}
-          <AnimatedSection delay={0.25}>
+          <AnimatedSection delay={0.2} hoverable>
             <div className="group">
               <div className="w-10 h-10 bg-gold/10 flex items-center justify-center mb-5 transition-colors group-hover:bg-gold/20">
                 <Award size={18} className="text-gold" />

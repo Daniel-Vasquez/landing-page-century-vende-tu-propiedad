@@ -1,4 +1,4 @@
-import{j as e}from"./jsx-runtime.TBa3i5EZ.js";import{r as l}from"./index.CVf8TyFT.js";import{A as t}from"./AnimatedSection.BWL5Zwjp.js";import{c as n,M as c}from"./message-circle.PrOyfMx5.js";import{A as d}from"./arrow-right.BVaGYcmb.js";import"./proxy.B0douX_x.js";/**
+import{j as e}from"./jsx-runtime.TBa3i5EZ.js";import{r as l}from"./index.CVf8TyFT.js";import{A as t}from"./AnimatedSection.Bb2krVCe.js";import{c as n,M as c}from"./message-circle.PrOyfMx5.js";import{A as d}from"./arrow-right.BVaGYcmb.js";import"./proxy.B0douX_x.js";/**
  * @license lucide-react v0.441.0 - ISC
  *
  * This source code is licensed under the ISC license.

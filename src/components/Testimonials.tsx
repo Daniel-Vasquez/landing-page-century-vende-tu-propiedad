@@ -49,7 +49,7 @@ export default function Testimonials() {
 
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {testimonials.map((t, i) => (
-            <AnimatedSection key={i} delay={i * 0.1}>
+            <AnimatedSection key={i} delay={i * 0.1} hoverable>
               <div className="border border-dark/8 p-7 h-full flex flex-col hover:border-gold/40 transition-colors duration-300">
                 <Quote size={22} className="text-gold/50 mb-4 shrink-0" />
                 <p className="font-sans text-dark/65 leading-relaxed text-sm flex-1 mb-6">

@@ -58,7 +58,7 @@ export default function RealEstateTruths() {
 
         <div className="grid md:grid-cols-2 gap-x-16 gap-y-0">
           {truths.map((t, i) => (
-            <AnimatedSection key={i} delay={i * 0.07}>
+            <AnimatedSection key={i} delay={i * 0.1}>
               <div className="py-6 border-b border-dark/8">
                 <p className="font-sans text-xs font-medium tracking-wide uppercase text-dark/35 mb-2">
                   "{t.objection}"

@@ -55,7 +55,7 @@ export default function HowWeWork() {
         {/* Steps */}
         <div className="space-y-0">
           {steps.map((step, i) => (
-            <AnimatedSection key={step.num} delay={i * 0.08}>
+            <AnimatedSection key={step.num} delay={i * 0.1} hoverable>
               <div className="group flex gap-8 md:gap-12 py-8 border-b border-dark/8 last:border-0 transition-colors duration-300 hover:bg-cream/30 px-2 -mx-2">
                 <div className="shrink-0 pt-1">
                   <span className="font-serif text-4xl md:text-5xl font-light text-gold/30 group-hover:text-gold/60 transition-colors duration-300 select-none">

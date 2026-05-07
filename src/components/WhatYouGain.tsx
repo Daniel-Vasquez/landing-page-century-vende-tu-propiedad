@@ -56,7 +56,7 @@ export default function WhatYouGain() {
 
             <div className="space-y-4 mb-10">
               {benefits.map((item, i) => (
-                <AnimatedSection key={i} delay={0.15 + i * 0.07}>
+                <AnimatedSection key={i} delay={0.12 + i * 0.1}>
                   <div className="flex items-start gap-3">
                     <div className="w-5 h-5 bg-gold/15 flex items-center justify-center shrink-0 mt-0.5">
                       <Check size={12} className="text-gold" strokeWidth={2.5} />

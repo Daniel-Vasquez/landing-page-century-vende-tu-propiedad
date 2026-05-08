@@ -1,8 +1,6 @@
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowRight, MessageCircle, X } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
-
-const WA_NUMBER = '5215512345678';
-const WA_MSG = encodeURIComponent('Hola, me gustaría saber cómo aplicaría el proceso para vender mi propiedad en CDMX.');
 
 const steps = [
   {
@@ -33,6 +31,8 @@ const steps = [
 ];
 
 export default function HowWeWork() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const scrollToForm = () =>
     document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' });
 
@@ -73,20 +73,31 @@ export default function HowWeWork() {
           ))}
         </div>
 
+        {isModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+            <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+              <button 
+                onClick={() => setIsModalOpen(false)}
+                className="absolute top-4 right-4 z-10 p-2 bg-white rounded-full text-dark/60 hover:text-dark hover:bg-cream transition-colors shadow-sm"
+              >
+                <X size={20} />
+              </button>
+              <div className="p-1">
+                <iframe src="https://devbricks.wdinamo.com/formulario-landing-century-vende-tu-propiedad/" className="w-full min-h-[500px] border-none"></iframe>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* CTAs */}
         <AnimatedSection delay={0.5} className="mt-16 flex flex-col sm:flex-row gap-4 items-start">
           <p className="font-sans text-dark/60 text-sm italic self-center sm:mr-4 hidden sm:block">
             ¿Quieres saber cómo aplicaría este proceso a tu propiedad?
           </p>
-          <a
-            href={`https://wa.me/${WA_NUMBER}?text=${WA_MSG}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
-            <MessageCircle size={16} />
-            Hablar por WhatsApp
-          </a>
+          <button onClick={() => setIsModalOpen(true)} className="btn-secondary">
+            Contáctanos
+            <ArrowRight size={14} />
+          </button>
           <button onClick={scrollToForm} className="btn-secondary">
             Llenar el formulario
             <ArrowRight size={14} />

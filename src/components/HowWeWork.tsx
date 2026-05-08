@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, MessageCircle, X } from 'lucide-react';
+import { ArrowRight, X } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
 const steps = [

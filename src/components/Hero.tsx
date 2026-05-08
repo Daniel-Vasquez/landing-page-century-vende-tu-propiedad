@@ -1,8 +1,6 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, MessageCircle } from 'lucide-react';
-
-const WA_NUMBER = '5215512345678'; // ⚠️ Reemplazar con el número real del cliente
-const WA_MSG = encodeURIComponent('Hola, me gustaría recibir asesoría para vender mi propiedad en CDMX.');
+import { ArrowRight, X } from 'lucide-react';
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 32 },
@@ -11,6 +9,8 @@ const fadeUp = (delay = 0) => ({
 });
 
 export default function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const scrollToForm = () => {
     document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -63,21 +63,31 @@ export default function Hero() {
             Cada mes que una propiedad no se mueve, pierde posición en el mercado.
           </motion.p>
 
+          {isModalOpen && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+              <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+                <button 
+                  onClick={() => setIsModalOpen(false)}
+                  className="absolute top-4 right-4 z-10 p-2 bg-white rounded-full text-dark/60 hover:text-dark hover:bg-cream transition-colors shadow-sm"
+                >
+                  <X size={20} />
+                </button>
+                <div className="p-5">
+                  <iframe src="https://devbricks.wdinamo.com/formulario-landing-century-vende-tu-propiedad/" className="w-full min-h-[500px] border-none"></iframe>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* CTAs */}
           <motion.div
             {...fadeUp(0.62)}
             className="flex flex-col sm:flex-row gap-4 items-start sm:items-center"
           >
-            <a
-              href={`https://wa.me/${WA_NUMBER}?text=${WA_MSG}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              <MessageCircle size={17} />
-              Solicitar diagnóstico gratuito
-              <ArrowRight size={15} />
-            </a>
+            <button onClick={() => setIsModalOpen(true)} className="btn-secondary text-white">
+              Contáctanos
+              <ArrowRight size={14} />
+            </button>
             <button onClick={scrollToForm} className="btn-secondary-light">
               Prefiero llenar el formulario
               <ArrowRight size={14} />
